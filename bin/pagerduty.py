@@ -173,8 +173,10 @@ def main():
         default_description = ''
 
     description = os.environ.get('SPLUNK_ARG_5', default_description)
+    
+    incident_key = os.environ.get('SPLUNK_ARG_4')
 
-    trigger_pagerduty(description, details, pagerduty_api_key)
+    trigger_pagerduty(description, details, pagerduty_api_key, incident_key)
 
 
 if __name__ == '__main__':
